@@ -1,15 +1,26 @@
 <?php 
 
+
+
 class Funcionario {
+    
+    protected DataBase $connect;
 
     protected int $id;
     protected string $nome;
     protected string $genero;
-    protected string $idade;
-    protected string $salario;
+    protected int $idade;
+    protected float $salario;
 
-    public function __construct()
+    public function __construct(int $id, string $nome, string $genero, int $idade, float $salario)
     {
+        $this->connect = (new DataBase)->connect();
+        
+        $this->id = $id;
+        $this->nome = $nome;
+        $this->genero = $genero;
+        $this->idade = $idade;
+        $this->salario = $salario;
         
     }
 
@@ -18,7 +29,7 @@ class Funcionario {
     }
 
     public function ReadAll(){
-    
+        
     }
 
     public function ReadId($id){
