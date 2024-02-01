@@ -1,0 +1,21 @@
+
+php:
+  image: php:8.2-apache
+  container_name: meu-php
+  ports:
+    - "80:80"
+    - "443:443"
+  volumes:
+    - /Users/luana/OneDrive/Área de Trabalho/php-projetos/funcionarios/php:var/www/html
+  links:
+    - db
+  
+db:
+  image: mysql:latest
+  container_name: meu-sql-php
+  ports:
+    - "3306:3306"
+  volumes:
+    - /var/lib/mysql
+  environment:
+    - MYSQL_ROOT_PASSWORD=root
