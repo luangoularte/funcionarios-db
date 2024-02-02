@@ -5,7 +5,7 @@ require_once "Funcionario.php";
 $connect = new DataBase();
 $connect = $connect->connect();
 
-$funcionariosVazio->ReadAll($connect);
+
 $funcionarios = new Funcionario(0, '', '', 0, 0);
 
 $funcionario1 = new Funcionario(15263, "Lucas", "M", 26, 1200);
